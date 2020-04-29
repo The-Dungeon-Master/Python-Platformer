@@ -12,6 +12,7 @@ A second, more challenging level!
 There is a Ready screen before each level starts!
 The timer continues into level 2 where it stopped in level 1!
 It will create a file to save your resolution data to so you don't have to look it up!
-The file is called Resolution.txt and is created if you say you haven't played before
-You need 4 files for it to run: platformer.py, platformer_lvl1.py, platformer_lvl2.py, and Ready_screen.py
-More updates coming soon, including enemies, BGM, and SFX!
+The file is called Resolution.txt and is created if you say you haven't played before.
+You need 4 files for it to run: platformer.py, platformer_lvl1.py, platformer_lvl2.py, and Ready_screen.py.
+
+More updates coming soon, including enemies, more levels, BGM, and SFX!
