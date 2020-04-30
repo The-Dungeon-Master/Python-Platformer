@@ -10,7 +10,6 @@ def levelTwo(timeTaken):
         else:
             x = int(tempText)
             tempText = ''
-            print(x)
     y = int(tempText)
     file.close()
     size = length, width = x, y
@@ -23,8 +22,7 @@ def levelTwo(timeTaken):
     yellow = 255, 255, 0
     green = 0, 255, 0
     magenta = 255, 0, 255
-    print('To play this game, use left and right to move and down to jump')
-    print('The goal is to get to the green platform')
+    print('Level 2')
     pygame.display.init()
     import Ready_screen
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)    
