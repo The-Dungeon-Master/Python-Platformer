@@ -12,7 +12,6 @@ def levelOne():
             else:
                 x = int(tempText)
                 tempText = ''
-                print(x)
         y = int(tempText)
         file.close()
     else:
@@ -37,7 +36,9 @@ def levelOne():
         print('To play this game, use left and right to move and down to jump.')
         print('Q anc ESC exit, and click to pass ready screen')
         print('The goal is to get to the green platform')
+        print('You restart the level if you touch a red enemy')
         GotIt = input('Got it?')
+        print('Level 1')
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
     pygame.font.init()
     import Ready_screen
