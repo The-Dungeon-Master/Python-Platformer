@@ -1,5 +1,6 @@
 def levelTwo(timeTaken):
     import pygame, sys, time
+    pygame.mixer.music.stop()
     yes = ['Y', 'y', 'yes', 'Yes', 'Sure', 'sure', 'Yeah', 'yeah']
     file = open('Resolution.txt', 'r')
     tempText = ''
@@ -52,6 +53,8 @@ def levelTwo(timeTaken):
     platforms.append(Platform(size[0]/2, size[1]/8 * 7, size, green))
     playerx = 0
     playery = 0
+    pygame.mixer.music.load('BGM#2.wav')
+    pygame.mixer.music.play(-1)
     while True:
         player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
         text = fontForGame.render(str(int(time.time() - counter)), False, red)
