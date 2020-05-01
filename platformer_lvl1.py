@@ -31,12 +31,14 @@ def levelOne():
     yellow = 255, 255, 0
     green = 0, 255, 0
     magenta = 255, 0, 255
+    pygame.mixer.init()
     GotIt = ''
     while GotIt not in yes:
         print('To play this game, use left and right to move and down to jump.')
         print('Q anc ESC exit, and click to pass ready screen')
         print('The goal is to get to the green platform')
         print('You restart the level if you touch a red enemy')
+        print('Level 4 has a feature where you can kill enemies by standing on invisible\nplatforms')
         GotIt = input('Got it?')
         print('Level 1')
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
@@ -83,6 +85,8 @@ def levelOne():
     platforms.append(Platform(size[0]/5, size[1]/8 * 7, size, green))
     playerx = 0
     playery = 0
+    pygame.mixer.music.load('BGM#1.wav')
+    pygame.mixer.music.play(-1)
     while True:
         player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
         text = fontForGame.render(str(int(time.time() - counter)), False, red)
