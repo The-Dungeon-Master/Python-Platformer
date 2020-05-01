@@ -1,5 +1,6 @@
 def levelThree(timeTaken):
     import pygame, sys, time
+    pygame.mixer.music.stop()
     yes = ['Y', 'y', 'yes', 'Yes', 'Sure', 'sure', 'Yeah', 'yeah']
     file = open('Resolution.txt', 'r')
     tempText = ''
@@ -79,6 +80,8 @@ def levelThree(timeTaken):
     enemies.append(Enemy(size[0]/3, size[1]/2, 'right', size))
     playerx = 0
     playery = 0
+    pygame.mixer.music.load('BGM#3.wav')
+    pygame.mixer.music.play(-1)
     while True:
         player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
         text = fontForGame.render(str(int(time.time() - counter)), False, red)
