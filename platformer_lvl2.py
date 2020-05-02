@@ -30,7 +30,7 @@ def levelTwo(timeTaken):
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)    
     Ready_screen.ready(2, screen)
     pygame.font.init()
-    fontForGame = pygame.font.SysFont('Courier New Bold.ttf', 24)
+    fontForGame = pygame.font.Font('Courier New.ttf', 24)
     counter = time.time() - timeTaken
     def pause():
         timer = time.time()
@@ -71,6 +71,7 @@ def levelTwo(timeTaken):
     playery = 0
     pygame.mixer.music.load('BGM#2.wav')
     pygame.mixer.music.play(-1)
+    clock = pygame.time.Clock()
     while True:
         text = fontForGame.render(str(int(time.time() - counter)), False, red)
         for event in pygame.event.get():
@@ -133,3 +134,4 @@ def levelTwo(timeTaken):
         pygame.draw.line(screen, black, (playerx + size[0]/500, playery + size[0]/165), (playerx + size[0]/150 + 1, playery + size[0]/165))
         screen.blit(text, (0, 0))
         pygame.display.flip()
+        clock.tick(60)
