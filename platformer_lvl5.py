@@ -31,7 +31,7 @@ def levelFive(timeTaken):
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)    
     Ready_screen.ready(2, screen)
     pygame.font.init()
-    fontForGame = pygame.font.SysFont('Courier New Bold.ttf', 24)
+    fontForGame = pygame.font.Font('Courier New.ttf', 24)
     counter = time.time() - timeTaken
     def pause():
         timer = time.time()
@@ -117,6 +117,7 @@ def levelFive(timeTaken):
     player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
     pygame.mixer.music.load('BGM#5.wav')
     pygame.mixer.music.play(-1)
+    clock = pygame.time.Clock()
     while True:
         text = fontForGame.render(str(int(time.time() - counter)), False, red)
         for event in pygame.event.get():
@@ -190,3 +191,4 @@ def levelFive(timeTaken):
         screen.blit(text, (0, 0))
         screen.blit(killVar, (0, 50))
         pygame.display.flip()
+        clock.tick(60)
