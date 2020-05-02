@@ -2,7 +2,7 @@ def ready(lvl, screen):
     import pygame, sys
     screen.fill((0, 0, 255))
     pygame.font.init()
-    fontToUse = pygame.font.SysFont('Courier New Bold.ttf', 286)
+    fontToUse = pygame.font.Font('Courier New.ttf', 286)
     text = fontToUse.render('Ready?', False, (0, 255, 0))
     screen.blit(text, (screen.get_size()[0] / 6, screen.get_size()[1] / 6))
     for i in range(0, screen.get_size()[0], 4):
