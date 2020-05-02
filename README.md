@@ -33,4 +33,4 @@ It will create a file to save your resolution data to so you don't have to look 
 The file is called Resolution.txt and is created if you say you haven't played before.
 You need 4 files for it to run: platformer.py, platformer_lvl1.py, platformer_lvl2.py, and Ready_screen.py.
 
-More updates coming soon, including more enemies, more levels, powerups, a pause feature, and SFX!
+More updates coming soon, including more enemies, more levels, powerups, and SFX!
