@@ -22,6 +22,7 @@ def levelFour(timeTaken):
     red = 255, 0, 0
     yellow = 255, 255, 0
     green = 0, 255, 0
+    black = 0, 0, 0
     magenta = 255, 0, 255
     canKill = False
     print('Level 4')
@@ -32,6 +33,21 @@ def levelFour(timeTaken):
     pygame.font.init()
     fontForGame = pygame.font.SysFont('Courier New Bold.ttf', 24)
     counter = time.time() - timeTaken
+    def pause():
+        timer = time.time()
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    print('You have quit the game')
+                    sys.exit(0)
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+                        pygame.quit()
+                        print('You have quit the game')
+                        sys.exit(0)
+                    if event.key == pygame.K_r:
+                        return (time.time() - timer)
     class Platform():
         def __init__(self, x, y, size, color):
             self.color = color
@@ -98,10 +114,10 @@ def levelFour(timeTaken):
     enemies.append(Enemy(size[0]/5 * 3, size[1]/8 * 7, 'right', size))
     playerx = 0
     playery = 0
+    player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
     pygame.mixer.music.load('BGM#4.wav')
     pygame.mixer.music.play(-1)
     while True:
-        player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
         text = fontForGame.render(str(int(time.time() - counter)), False, red)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -120,6 +136,8 @@ def levelFour(timeTaken):
                 if event.key == pygame.K_DOWN and canJump:
                     down = size[1]/50
                     canJump = False
+                if event.key == pygame.K_p:
+                    counter += pause()
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT:
                     left = False
@@ -147,7 +165,7 @@ def levelFour(timeTaken):
                                 if platform.color == blue:
                                     canKill = True
         if playery >= 0:
-            down -= 1
+            down -= size[1]/768
             playery += down
         else:
             playery = 0
@@ -161,7 +179,14 @@ def levelFour(timeTaken):
             killVar = fontForGame.render('You can kill someone!', False, green)
         else:
             killVar = fontForGame.render('You can\'t kill yet.', False, red)
+        player = pygame.Rect(playerx, playery, size[0]/100, size[0]/100)
+        eye1 = pygame.Rect(playerx + size[0]/500, playery + size[0]/500, 2, 2)
+        eye2 = pygame.Rect(playerx + size[0]/150, playery + size[0]/500, 2, 2)
         pygame.draw.rect(screen, magenta, player)
+        pygame.draw.rect(screen, black, eye1)
+        pygame.draw.rect(screen, black, eye2)
+        pygame.draw.polygon(screen, black, ((playerx + size[0]/200, playery + size[0]/350), (playerx + size[0]/200 + 2, playery + size[0]/250), (playerx + size[0]/200 - 2, playery + size[0]/250)))
+        pygame.draw.line(screen, black, (playerx + size[0]/500, playery + size[0]/165), (playerx + size[0]/150 + 1, playery + size[0]/165))
         screen.blit(text, (0, 0))
         screen.blit(killVar, (0, 50))
         pygame.display.flip()
