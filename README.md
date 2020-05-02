@@ -7,6 +7,12 @@ For those of you who don't know how to use python, open the file in python IDLE 
 To install python IDLE, visit 45.55.99.72 (python.org) - downloads page.
 To install pygame, visit 104.36.12.138 (pygame.org) - The code under the getting started tab goes in powershell in Windows or Terminal in Mac OS or Linux.
 
+Version 5:
+A fifth level!
+The player graphics have been updated!
+There is a pause function!
+Gravity is now the same for all monitors!
+
 Version 4:
 A fourth level!
 There is now a way to kill enemies!
