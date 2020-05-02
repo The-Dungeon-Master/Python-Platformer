@@ -11,6 +11,7 @@ Version 5.1:
 First test on Windows!
 Fixed font problems!
 For scaling issues, make sure you divide the resolution by the OS's scale (for example, if it is 150%, you need to multiply by 2/3.
+The framerate is now limited to 60 FPS, so it won't be too fast to play!
 
 Version 5:
 A fifth level!
