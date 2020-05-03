@@ -29,7 +29,7 @@ def levelFour(timeTaken):
     pygame.display.init()
     import Ready_screen
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)    
-    Ready_screen.ready(2, screen)
+    Ready_screen.ready(4, screen, 'Kill enemies with the invisible platform')
     pygame.font.init()
     fontForGame = pygame.font.Font('Courier New.ttf', 24)
     counter = time.time() - timeTaken
