@@ -7,6 +7,12 @@ For those of you who don't know how to use python, open the file in python IDLE 
 To install python IDLE, visit 45.55.99.72 (python.org) - downloads page.
 To install pygame, visit 104.36.12.138 (pygame.org) - The code under the getting started tab goes in powershell in Windows or Terminal in Mac OS or Linux.
 
+Version 6:
+Added level 6!
+Background for levels 6-10 will be green!
+The goal is now blue!
+There is a new platform: An orange one that bounces you and allows you to jump once in midair!
+
 Version 5.1:
 First test on Windows!
 Fixed font problems!
