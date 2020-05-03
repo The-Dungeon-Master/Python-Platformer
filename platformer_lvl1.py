@@ -33,20 +33,17 @@ def levelOne():
     magenta = 255, 0, 255
     black = 0, 0, 0
     pygame.mixer.init()
-    GotIt = ''
-    while GotIt not in yes:
-        print('To play this game, use left and right to move and down to jump.')
-        print('Q anc ESC exit, and click to pass ready screen')
-        print('P to pause and R to resume')
-        print('The goal is to get to the green platform')
-        print('You restart the level if you touch a red enemy')
-        print('Level 4 and 5 have a feature where you can kill enemies by standing on invisible\nplatforms')
-        GotIt = input('Got it?')
-        print('Level 1')
+    message = '''To play this game, use left and right to move and down to jump.
+    Q anc ESC exit, and click to pass ready screen
+    P to pause and R to resume\nThe goal is to get to the green platform
+    You restart the level if you touch a red enemy'''
+    print('Level 1')
+    print(message)
+    time.sleep(15)
     screen = pygame.display.set_mode(size, pygame.FULLSCREEN)
     pygame.font.init()
     import Ready_screen
-    Ready_screen.ready(1, screen)
+    Ready_screen.ready(1, screen, 'No messages')
     fontForGame = pygame.font.Font('Courier New.ttf', 24)
     counter = time.time()
     def pause():
